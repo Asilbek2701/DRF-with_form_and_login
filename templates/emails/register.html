@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Register</title>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: #f1f1f1;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+
+        .form-box {
+            background: white;
+            padding: 30px 40px;
+            border-radius: 12px;
+            width: 350px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+        }
+
+        h2 {
+            margin-bottom: 20px;
+            text-align: center;
+            color: #222;
+        }
+
+        form p {
+            margin-bottom: 15px;
+            color: #444;
+        }
+
+        input {
+            width: 100%;
+            padding: 10px 12px;
+            border-radius: 8px;
+            border: 1px solid #ccc;
+            outline: none;
+            margin-top: 5px;
+        }
+
+        input:focus {
+            border-color: #1a73e8;
+        }
+
+        button {
+            width: 100%;
+            padding: 12px;
+            background: #1a73e8;
+            color: white;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 16px;
+            margin-top: 10px;
+        }
+
+        button:hover {
+            background: #155fc0;
+        }
+    </style>
+
+</head>
+<body>
+
+<div class="form-box">
+    <h2>Register</h2>
+
+    <form method="post">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit">Register</button>
+    </form>
+</div>
+
+</body>
+</html>
