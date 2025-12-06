@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Posts</title>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: #f5f5f5;
+            padding: 40px;
+        }
+
+        a {
+            font-size: 22px;
+            text-decoration: none;
+            font-weight: bold;
+            color: #1a73e8;
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
+
+        .post-box {
+            background: white;
+            padding: 20px;
+            margin-bottom: 25px;
+            border-radius: 10px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+        }
+
+        p {
+            font-size: 16px;
+            margin-top: 10px;
+            color: #333;
+        }
+
+        small {
+            color: #777;
+            display: block;
+            margin-top: 8px;
+        }
+
+        h4 {
+            margin-top: 10px;
+            color: #444;
+        }
+    </style>
+
+</head>
+<body>
+
+{% for post in posts %}
+<div class="post-box">
+    <a href="{% url 'post_detail' post.slug %}">{{ post.title }}</a>
+    <p>{{ post.content }}</p>
+    <small>{{ post.date }}</small>
+    <h4>{{ post.author }}</h4>
+</div>
+{% endfor %}
+
+</body>
+</html>
