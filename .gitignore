@@ -1,6 +1,7 @@
 .env
 venv
 users/migrations/*
-db.sqlite3
 .idea
 __pycache__
+blog/migrations/*
+db.sqlite3
