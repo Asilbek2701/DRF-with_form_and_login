@@ -14,11 +14,11 @@ def register(request):
         form = UserRegisterForm()
 
     context = {"form": form}
-    return render(request, "register.html", context)
+    return render(request, "users/register.html", context)
 
 
 def thankyou(request):
-    return render(request, 'thankyou.html')
+    return render(request, 'users/thankyou.html')
 
 class UserList(ListAPIView):
     queryset = CustomUser.objects.all()
