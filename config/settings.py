@@ -12,6 +12,8 @@ https://docs.djangoproject.com/en/6.0/ref/settings/
 
 from pathlib import Path
 import os
+
+from django.conf.global_settings import EMAIL_BACKEND
 from dotenv import load_dotenv
 load_dotenv()
 
@@ -43,6 +45,7 @@ INSTALLED_APPS = [
     'users',
     'rest_framework',
     'blog',
+    'emails',
 ]
 
 MIDDLEWARE = [
@@ -103,6 +106,13 @@ AUTH_PASSWORD_VALIDATORS = [
         "NAME": "django.contrib.auth.password_validation.NumericPasswordValidator",
     },
 ]
+
+EMAIL_BACKEND = "django.core.mail.backends.smtp.EmailBackend"
+EMAIL_USE_TLS = True
+EMAIL_HOST = "smtp.gmail.com"
+EMAIL_PORT = 587
+EMAIL_HOST_USER = os.getenv("HostUser")
+EMAIL_HOST_PASSWORD = os.getenv("HostPassword")
 
 
 # Internationalization
